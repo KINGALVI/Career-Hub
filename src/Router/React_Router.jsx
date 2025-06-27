@@ -1,6 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorHandel from "../components/HandelError/ErrorHandel";
 import Main from "../components/Main-Section/MainSection";
+import Jobs from "../components/Main-Section/Jobs/Jobs";
+import ApliedJobs from "../components/Main-Section/Aplied-Jobs/ApliedJobs";
+import Statistics from "../components/Main-Section/Statistics/Statistics";
+import Blogs from "../components/Main-Section/Blogs/Blogs";
+
 
 const React_Router = () => {
 
@@ -14,8 +19,20 @@ const React_Router = () => {
 
             children: [
                 {
-                    path: "/Alvi",
-                    element: <h1 className="text-9xl">KING ALVI</h1>
+                    path: "/Jobs",
+                    element: <Jobs />
+                },
+                {
+                    path: "/ApliedJobs",
+                    element: <ApliedJobs />
+                },
+                {
+                    path: "/Statistics",
+                    element: <Statistics />
+                },
+                {
+                    path: "/Blogs",
+                    element: <Blogs />
                 }
             ]
         }
