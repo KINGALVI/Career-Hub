@@ -13,7 +13,10 @@ const React_Router = () => {
             errorElement: <ErrorHandel />,
 
             children: [
-
+                {
+                    path: "/Alvi",
+                    element: <h1 className="text-9xl">KING ALVI</h1>
+                }
             ]
         }
     ])
