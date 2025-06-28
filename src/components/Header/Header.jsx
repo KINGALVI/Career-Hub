@@ -5,7 +5,6 @@ const Header = () => {
 
     const Links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/Jobs'>Jobs</NavLink></li>
         <li><NavLink to='/ApliedJobs'>Aplied Jobs</NavLink></li>
         <li><NavLink to='/Statistics'>Statistics</NavLink></li>
         <li><NavLink to='/Blogs'>Blogs</NavLink></li>
