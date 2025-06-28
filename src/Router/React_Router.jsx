@@ -5,19 +5,23 @@ import Jobs from "../components/Main-Section/Jobs/Jobs";
 import ApliedJobs from "../components/Main-Section/Aplied-Jobs/ApliedJobs";
 import Statistics from "../components/Main-Section/Statistics/Statistics";
 import Blogs from "../components/Main-Section/Blogs/Blogs";
+import Home from "../components/Main-Section/Home/Home";
 
 
 const React_Router = () => {
 
     const router = createBrowserRouter([
         {
-            path: "/",
 
             element: <Main />,
 
             errorElement: <ErrorHandel />,
 
             children: [
+                {
+                    path: "/",
+                    element: <Home />
+                },
                 {
                     path: "/Jobs",
                     element: <Jobs />

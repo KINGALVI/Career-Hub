@@ -1,5 +1,5 @@
 import './Header.css';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
 
@@ -25,7 +25,7 @@ const Header = () => {
                             {Links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <Link to='/' className="btn btn-ghost text-xl">Career Hub</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -33,7 +33,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <Link to='/Jobs' className="btn btn-accent">Start Applying</Link>
                 </div>
             </div>
         </>
