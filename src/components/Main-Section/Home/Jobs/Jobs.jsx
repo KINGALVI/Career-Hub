@@ -1,7 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import './Jobs.css';
 
 const Jobs = ({ SingelJobData }) => {
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary, moneyImg, locationImg } = SingelJobData
+
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary, moneyImg, locationImg } = SingelJobData
+
+    const Navigate = useNavigate()
+    const SingelJobDetail = () => {
+        Navigate(`/${id}`)
+    }
+
     return (
         <center>
             <div className="card bg-base-100 w-96 shadow-lg Border">
@@ -29,7 +37,7 @@ const Jobs = ({ SingelJobData }) => {
                         </span>
                     </span>
                     <div className="card-actions mt-5">
-                        <button className="btn btn-primary">View Details</button>
+                        <button className="btn btn-primary" onClick={SingelJobDetail}>View Details</button>
                     </div>
                 </div>
             </div>
