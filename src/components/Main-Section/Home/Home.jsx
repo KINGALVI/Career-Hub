@@ -5,10 +5,13 @@ import Creative from '../../../../public/assets/icons/creative.png'
 import Marketing from '../../../../public/assets/icons/marketing.png'
 import Jobs from './Jobs/Jobs'
 import { useLoaderData } from 'react-router-dom'
+import { useState } from 'react'
 
 const Home = () => {
 
     const AllJobsData = useLoaderData()
+
+    const [ShowAllJobs, setShowAllJobs] = useState(4);
 
     return (
         <>
@@ -73,9 +76,14 @@ const Home = () => {
             <br /><br />
             <div className="grid grid-cols-2">
                 {
-                    AllJobsData.map(SingelJobData => <Jobs key={SingelJobData.id} SingelJobData={SingelJobData} />)
+                    AllJobsData.slice(0, ShowAllJobs).map(SingelJobData => <Jobs key={SingelJobData.id} SingelJobData={SingelJobData} />)
                 }
             </div>
+
+            <center className={ShowAllJobs === AllJobsData.length ? "hidden" : ""}>
+                <button className="btn btn-primary" onClick={() => setShowAllJobs(AllJobsData.length)}>Show All Jobs</button>
+            </center>
+            <br /><b></b>
         </>
     );
 
