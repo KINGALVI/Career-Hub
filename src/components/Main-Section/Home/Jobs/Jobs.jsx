@@ -4,7 +4,7 @@ const Jobs = ({ SingelJobData }) => {
     const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary, moneyImg, locationImg } = SingelJobData
     return (
         <center>
-            <div className="card bg-base-100 w-96 shadow-sm Border">
+            <div className="card bg-base-100 w-96 shadow-lg Border">
                 <figure className="px-10 pt-10">
                     <img
                         src={logo}

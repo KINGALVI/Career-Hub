@@ -12,7 +12,7 @@ const Home = () => {
 
     return (
         <>
-            <div className="flex justify-center bg-base-100 shadow-sm">
+            <div className="flex justify-center bg-base-100 shadow-lg">
 
                 <div className='mt-5'>
                     <h1 className="text-5xl mb-5">One Step </h1>
