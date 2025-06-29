@@ -1,8 +1,20 @@
-import './SingelJob.css'
+import './SingelJob.css';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 const SingelJob = () => {
 
+    const notify = () => toast.success('You Have Sucessfully Applyed For Thish Job !', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+    });
     const SingelJobData = useLoaderData();
 
     const { job_responsibility, job_description, educational_requirements, experiences, contact_information } = SingelJobData;
@@ -30,7 +42,7 @@ const SingelJob = () => {
                         <p><b>Email :</b> {contact_information.email}</p>
                         <p><b>Address :</b> {contact_information.address}</p>
                         <br />
-                        <button className="btn btn-secondary">Apply Now</button>
+                        <button className="btn btn-secondary" onClick={notify}>Apply Now</button>
                         <br /><br />
                     </div>
                 </center>
@@ -42,6 +54,22 @@ const SingelJob = () => {
             <center><button className="btn btn-primary" onClick={ShowHomePage}>GO BACK</button></center>
 
             <br /><br /><br />
+
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition={Bounce}
+            />
+
+
         </>
     );
 
