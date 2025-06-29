@@ -4,8 +4,11 @@ import Chip from '../../../../public/assets/icons/chip.png'
 import Creative from '../../../../public/assets/icons/creative.png'
 import Marketing from '../../../../public/assets/icons/marketing.png'
 import Jobs from './Jobs/Jobs'
+import { useLoaderData } from 'react-router-dom'
 
 const Home = () => {
+
+    const AllJobsData = useLoaderData()
 
     return (
         <>
@@ -68,7 +71,11 @@ const Home = () => {
             <h1 className="text-3xl text-center font-bold mt-16 mb-3">Featured Jobs</h1>
             <p className="text-center">Explore thousands of job opportunities with all the information you need. Its your future</p>
             <br /><br />
-            <Jobs />
+            <div className="grid grid-cols-2">
+                {
+                    AllJobsData.map(SingelJobData => <Jobs key={SingelJobData.id} SingelJobData={SingelJobData} />)
+                }
+            </div>
         </>
     );
 
