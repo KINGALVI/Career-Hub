@@ -1,8 +1,16 @@
 import './SingelJob.css';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { SaveJobApplication } from '../../../Aplied-Jobs/LocalStorage/LocalStorage';
 
 const SingelJob = () => {
+
+    const SingelJobData = useLoaderData();
+    const { id, job_responsibility, job_description, educational_requirements, experiences, contact_information } = SingelJobData;
+
+    const SavedJobApplication = () => {
+        SaveJobApplication(id)
+    }
 
     const notify = () => toast.success('You Have Sucessfully Applyed For Thish Job !', {
         position: "top-center",
@@ -15,9 +23,6 @@ const SingelJob = () => {
         theme: "colored",
         transition: Bounce,
     });
-    const SingelJobData = useLoaderData();
-
-    const { job_responsibility, job_description, educational_requirements, experiences, contact_information } = SingelJobData;
 
     const Navigate = useNavigate();
     const ShowHomePage = () => {
@@ -42,7 +47,7 @@ const SingelJob = () => {
                         <p><b>Email :</b> {contact_information.email}</p>
                         <p><b>Address :</b> {contact_information.address}</p>
                         <br />
-                        <button className="btn btn-secondary" onClick={notify}>Apply Now</button>
+                        <button className="btn btn-secondary" onClick={() => { notify(), SavedJobApplication() }}>Apply Now</button>
                         <br /><br />
                     </div>
                 </center>

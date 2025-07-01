@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorHandel from "../components/HandelError/ErrorHandel";
 import Main from "../components/Main-Section/MainSection";
-import ApliedJobs from "../components/Main-Section/Aplied-Jobs/ApliedJobs";
+import ApliedJobs from "../components/Main-Section/Aplied-Jobs/AppliedJobs";
 import Statistics from "../components/Main-Section/Statistics/Statistics";
 import Blogs from "../components/Main-Section/Blogs/Blogs";
 import Home from "../components/Main-Section/Home/Home";
@@ -48,6 +48,7 @@ const React_Router = () => {
 
                 {
                     path: "/ApliedJobs",
+                    loader: () => fetch('/data/jobs.json'),
                     element: <ApliedJobs />
                 },
                 {
