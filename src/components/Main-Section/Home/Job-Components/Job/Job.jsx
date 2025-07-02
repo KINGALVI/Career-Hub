@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import './Jobs.css';
+import './Job.css';
 
-const Jobs = ({ SingelJobData }) => {
+const Job = ({ SingelJobData }) => {
 
     const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary, moneyImg, locationImg } = SingelJobData
 
@@ -46,4 +46,4 @@ const Jobs = ({ SingelJobData }) => {
 
 };
 
-export default Jobs;
+export default Job;

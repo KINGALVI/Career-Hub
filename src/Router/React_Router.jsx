@@ -1,11 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorHandel from "../components/HandelError/ErrorHandel";
 import Main from "../components/Main-Section/MainSection";
+import JobList from "../components/Main-Section/Home/Job-Components/JobList/JobList"
 import ApliedJobs from "../components/Main-Section/Aplied-Jobs/AppliedJobs";
-import Statistics from "../components/Main-Section/Statistics/Statistics";
-import Blogs from "../components/Main-Section/Blogs/Blogs";
 import Home from "../components/Main-Section/Home/Home";
-import SingelJob from "../components/Main-Section/Home/Jobs/SingelJob/SingelJob";
+import SingelJob from "../components/Main-Section/Home/Job-Components/SingelJob/SingelJob";
 
 
 const React_Router = () => {
@@ -22,6 +21,12 @@ const React_Router = () => {
                     path: "/",
                     loader: () => fetch('/data/jobs.json'),
                     element: <Home />
+                },
+
+                {
+                    path: "/JobList",
+                    loader: () => fetch('/data/jobs.json'),
+                    element: <JobList />
                 },
 
                 //***** Advance Method *****//
@@ -50,14 +55,6 @@ const React_Router = () => {
                     path: "/ApliedJobs",
                     loader: () => fetch('/data/jobs.json'),
                     element: <ApliedJobs />
-                },
-                {
-                    path: "/Statistics",
-                    element: <Statistics />
-                },
-                {
-                    path: "/Blogs",
-                    element: <Blogs />
                 }
             ]
         }
