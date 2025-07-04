@@ -1,13 +1,10 @@
-import LocationImg from '../../../../public/assets/icons/Location.png'
-import MoneyImg from '../../../../public/assets/icons/money.png'
 import { useEffect, useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { GetStoredJobApplication } from "./LocalStorage/LocalStorage";
 
 const AppliedJobs = () => {
 
     const AppliedJobs = useLoaderData()
-    const { id } = AppliedJobs
 
     const [ApliedJobs, setAppliedJobs] = useState([])
     const [DispalyJobs, setDisplayJobs] = useState([])
@@ -42,11 +39,6 @@ const AppliedJobs = () => {
         }
     }
 
-    const Navigate = useNavigate()
-    const SingelJobDetail = () => {
-        Navigate(`/${id}`)
-    }
-
     return (
         <>
             <div className="container mx-auto px-4 py-8">
@@ -76,13 +68,13 @@ const AppliedJobs = () => {
                                         <span className="badge badge-outline">{job.job_type}</span>
                                     </div>
                                     <div className="flex gap-4 text-sm text-gray-600">
-                                        <span><i className="fa-solid fa-location-dot mr-1">{LocationImg}</i>{job.location}</span>
-                                        <span><i className="fa-solid fa-sack-dollar mr-1">{MoneyImg}</i>{job.salary}</span>
+                                        <span><i className="fa-solid fa-location-dot mr-1"></i>{job.location}</span>
+                                        <span><i className="fa-solid fa-sack-dollar mr-1"></i>{job.salary}</span>
                                     </div>
                                 </div>
                             </div>
                             <div className="mt-4 md:mt-0">
-                                <button onClick={SingelJobDetail} className="btn btn-primary">View Details</button>
+                                <button className="btn btn-primary">View Details</button>
                             </div>
                         </div>
                     ))}
