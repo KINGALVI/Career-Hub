@@ -1,4 +1,9 @@
-a.active{
+/* 🎯 Style applied to active navigation links via <NavLink> in React Router */
+
+a.active {
+    /* ⬛ Dark background to visually highlight the active route */
     background-color: black;
+
+    /* ⚪ White text to contrast against black background */
     color: white;
 }

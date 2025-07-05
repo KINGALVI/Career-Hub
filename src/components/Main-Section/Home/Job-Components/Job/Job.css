@@ -1,6 +1,15 @@
+/* 🧱 Border utility class for wrapping badges, tags, or job info blocks */
+
 .Border {
+    /* 🔷 Adds a bright, clean blue border for visual separation */
     border: 2px solid rgb(78, 188, 231);
+
+    /* 🟦 Rounds the corners slightly for a smoother card feel */
     border-radius: 5px;
+
+    /* 📦 Adds space inside the border for breathing room */
     padding: 5px;
+
+    /* 🧩 Adds space outside to prevent elements from clashing visually */
     margin: 5px;
 }

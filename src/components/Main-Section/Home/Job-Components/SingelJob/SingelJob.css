@@ -1,6 +1,15 @@
+/* 📦 Border utility for wrapping larger info blocks (e.g. Contact Information section) */
+
 .Border {
+    /* 🟦 Thicker border to emphasize importance or separation */
     border: 5px solid rgb(78, 188, 231);
+
+    /* 🪢 Rounded corners for a softer, modern appearance */
     border-radius: 10px;
+
+    /* 📏 Padding for internal spacing around content */
     padding: 5px;
+
+    /* 🔳 Margin to add external spacing from other blocks */
     margin: 5px;
 }
