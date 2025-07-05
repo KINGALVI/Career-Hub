@@ -56,28 +56,35 @@ const AppliedJobs = () => {
                 </center>
                 <br /><br />
                 <div className="space-y-6">
-                    {DispalyJobs.map(job => (
-                        <div key={job.id} className="flex flex-col md:flex-row justify-between items-center border rounded-lg p-6 shadow-md bg-base-100">
-                            <div className="flex items-center space-x-5">
-                                <img src={job.logo} alt="Company Logo" className="w-24 h-24 object-contain bg-gray-100 rounded" />
-                                <div>
-                                    <h2 className="text-xl font-bold">{job.job_title}</h2>
-                                    <p className="text-gray-500">{job.company_name}</p>
-                                    <div className="flex flex-wrap gap-2 my-2">
-                                        <span className="badge badge-outline">{job.remote_or_onsite}</span>
-                                        <span className="badge badge-outline">{job.job_type}</span>
-                                    </div>
-                                    <div className="flex gap-4 text-sm text-gray-600">
-                                        <span><i className="fa-solid fa-location-dot mr-1"></i>{job.location}</span>
-                                        <span><i className="fa-solid fa-sack-dollar mr-1"></i>{job.salary}</span>
+                    {DispalyJobs.length > 0 ? (
+                        DispalyJobs.map(job => (
+                            <div key={job.id} className="flex flex-col md:flex-row justify-between items-center border rounded-lg p-6 shadow-md bg-base-100">
+                                <div className="flex items-center space-x-5">
+                                    <img src={job.logo} alt="Company Logo" className="w-24 h-24 object-contain bg-gray-100 rounded" />
+                                    <div>
+                                        <h2 className="text-xl font-bold">{job.job_title}</h2>
+                                        <p className="text-gray-500">{job.company_name}</p>
+                                        <div className="flex flex-wrap gap-2 my-2">
+                                            <span className="badge badge-outline">{job.remote_or_onsite}</span>
+                                            <span className="badge badge-outline">{job.job_type}</span>
+                                        </div>
+                                        <div className="flex gap-4 text-sm text-gray-600">
+                                            <span><i className="fa-solid fa-location-dot mr-1"></i>{job.location}</span>
+                                            <span><i className="fa-solid fa-sack-dollar mr-1"></i>{job.salary}</span>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className="mt-4 md:mt-0">
+                                    <button className="btn btn-primary">View Details</button>
+                                </div>
                             </div>
-                            <div className="mt-4 md:mt-0">
-                                <button className="btn btn-primary">View Details</button>
-                            </div>
-                        </div>
-                    ))}
+                        ))
+                    )
+
+                        : (
+                            <p className="text-center">No applied jobs found.</p>
+                        )
+                    }
                 </div>
             </div>
         </>
